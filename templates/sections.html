@@ -1,9 +1,21 @@
 {% extends 'default.html' %}
-{% set sections = ['Loan Information'] %}
+{% set sections = ['Home'] %}
+
+{% block navbar %}
+    <div id="main_navbar" class="navbar-menu slideout">
+        <div class="navbar-end">
+            {% for section in sections %}
+                <a class="navbar-item" href="/#{{ section|lower()|replace(' ', '_') }}">
+                    {{ section }}
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
 
 {% block content %}
     <a id="{{ sections[0]|lower()|replace(' ', '_') }}"></a>
-    <div class="hero is-dark">
+    <div class="hero is-info">
         <div class="hero-body">
             <h1 class="title">{{ sections[0] }}</h1>
             {% block section0_content %}
