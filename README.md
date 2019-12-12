@@ -1,7 +1,7 @@
-# Website Template
+# Group Information
 ## Flask, Bulma
 
-This is a website template created using Flask and Bulma.
+This website is built from a template created using Flask and Bulma.
 
 This template uses SASS. After making changes to `static/sass/sass_styles.scss`,
 run the command `sass --no-source-map sass/sass_styles.scss:sass_styles.css` to
