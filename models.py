@@ -6,7 +6,8 @@ db = SQLAlchemy()
 
 properties = db.Table('properties',
     db.Column('group_id', db.Integer, db.ForeignKey('group.id'), primary_key=True),
-    db.Column('property_id', db.Integer, db.ForeignKey('property.id'), primary_key=True)
+    db.Column('property_id', db.Integer, db.ForeignKey('property.id'), primary_key=True),
+    db.Column('value', db.String(50), nullable=True)
 )
 
 
@@ -24,5 +25,4 @@ class Property(db.Model):
     __tablename__ = 'property'
     id = db.Column(db.Integer, primary_key=True, nullable=False)
     name = db.Column(db.String(50), nullable=True)
-    value = db.Column(db.String(50), nullable=True)
 

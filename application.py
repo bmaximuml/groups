@@ -18,26 +18,12 @@ def create_application():
     except KeyError:
         raise EnvironmentUnsetError('WFB_FLASK_SECRET_KEY')
 
-    if 'WFB_DB_HOST' in environ and 'WFB_DB_NAME' in environ:
-        sqlalchemy_database_uri = 'mysql+mysqlconnector://'
-        if 'WFB_DB_USERNAME' in environ:
-            sqlalchemy_database_uri += environ['WFB_DB_USERNAME']
-            if 'WFB_DB_PASSWORD' in environ:
-                sqlalchemy_database_uri += ':'
-                sqlalchemy_database_uri += environ['WFB_DB_PASSWORD']
-        sqlalchemy_database_uri += '@'
-        sqlalchemy_database_uri += environ['WFB_DB_HOST']
-        if 'WFB_DB_PORT' in environ:
-            sqlalchemy_database_uri += ':'
-            sqlalchemy_database_uri += environ['WFB_DB_PORT']
-        sqlalchemy_database_uri += '/'
-        sqlalchemy_database_uri += environ['WFB_DB_NAME']
-
-        app.config['SQLALCHEMY_DATABASE_URI'] = sqlalchemy_database_uri
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///groups.db'
 
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-    db.init_app(app)
+    db.init_app(app=app)
+    db.create_all(app=app)
     return app
 
 
