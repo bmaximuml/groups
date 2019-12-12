@@ -26,7 +26,16 @@ Much of the website can be configured using environment variables. These are lai
 | WFB_SMTP_PASSWORD    | The password to authenticate sending emails with | Optional, however sending emails with TLS will be disabled if this is not specified
 | WFB_SMTP_TARGET      | The email address to send emails from the site to | Optional. If not specified, this will default to contactform@{WFB_SITE_URL}
 
-### Install
+## Install
 1. `git clone https://github.com/benjilev08/groups`
 2. `cd groups`
 3. `pip3 install .`
+
+## Setup
+
+* `export WFB_FLASK_SECRET_KEY=<secret_key>`
+    Set a secret key to be used by Flask. This must be set in order for the application to function. More detail on the Flask secret key can be found in [the Flask docs](https://flask.palletsprojects.com/en/1.1.x/quickstart/#sessions).
+* `export FLASK_APP=application.py`,
+    Specify the file to be targeted by the Flask development web server
+* `export FLASK_ENV=development` 
+    Set the environment to development to use the Flask development web server 
