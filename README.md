@@ -10,7 +10,7 @@ application.
 
 Much of the website can be configured using environment variables. These are laid out in the table below:
 
-### Environment Variables
+## Environment Variables
 
 | Variable Name        | Purpose | Required / Optional |
 | ---                  | ---     | ---                 |
