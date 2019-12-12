@@ -39,3 +39,9 @@ Much of the website can be configured using environment variables. These are lai
     Specify the file to be targeted by the Flask development web server
 * `export FLASK_ENV=development` 
     Set the environment to development to use the Flask development web server 
+
+## Usage
+* `flask run`
+    Start a development web server to host the website locally on port 5000
+* `flask shell`
+    Enter a Python terminal in the context of the application
