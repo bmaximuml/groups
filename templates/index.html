@@ -1,4 +1,24 @@
 {% extends 'sections.html' %}
 
 {% block section0_content %}
+    <table class="table">
+        <tr>
+            <th>
+                Group Name
+            </th>
+            <th>
+                Group Description
+            </th>
+        </tr>
+        {% for group in all_groups %}
+            <tr>
+                <td>
+                    {{ group.name }}
+                </td>
+                <td>
+                    {{ group.description }}
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
 {% endblock %}

@@ -8,7 +8,7 @@ from wtforms import Form, StringField, SubmitField, TextAreaField
 from wtforms.fields.html5 import EmailField
 from wtforms.validators import DataRequired, Email, length
 
-from models import db
+from models import db, Group
 
 
 def create_application():
@@ -72,9 +72,11 @@ class ContactForm(Form):
 
 
 @application.route('/', methods=['POST', 'GET'])
-def about():
+def home():
+    all_groups = Group.query.order_by(Group.name).all()
     return render_template(
         'index.html',
+        all_groups=all_groups,
         title=environ['WFB_PROJECT_NAME'],
         year=datetime.now().year,
     )
