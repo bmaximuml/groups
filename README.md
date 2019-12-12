@@ -25,3 +25,8 @@ Much of the website can be configured using environment variables. These are lai
 | WFB_SMTP_USERNAME    | The username to authenticate sending emails with | Optional, however sending emails with TLS will be disabled if this is not specified
 | WFB_SMTP_PASSWORD    | The password to authenticate sending emails with | Optional, however sending emails with TLS will be disabled if this is not specified
 | WFB_SMTP_TARGET      | The email address to send emails from the site to | Optional. If not specified, this will default to contactform@{WFB_SITE_URL}
+
+### Install
+1. `git clone https://github.com/benjilev08/groups`
+2. `cd groups`
+3. `pip3 install .`
